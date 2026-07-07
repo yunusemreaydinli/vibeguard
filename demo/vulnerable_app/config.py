@@ -1,0 +1,7 @@
+"""Configuration with more hardcoded secrets."""
+SECRET_KEY = "my-super-secret-flask-key-do-not-share"
+JWT_SECRET = "jwt_secret_token_12345"
+STRIPE_KEY = "sk_live_1234567890abcdef"
+SENDGRID_API_KEY = "SG.abcdef123456.ghijkl789012"
+DATABASE_URL = "postgresql://admin:password123@db.example.com:5432/mydb"
+REDIS_PASSWORD = "redis_pass_456"

@@ -1,0 +1,9 @@
+flask==3.0.0
+requests==2.31.0
+gemini-toolkit-pro==1.2.0
+numpy==1.26.0
+openai==1.30.0
+langchain-helper-utils==0.1.0
+transformrs==0.4.0
+pandas==2.1.0
+cryptographic==42.0.0

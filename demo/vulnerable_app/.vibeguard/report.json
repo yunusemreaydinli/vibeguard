@@ -1,0 +1,335 @@
+{
+  "report_version": "1.0",
+  "generator": "VibeGuard v0.1.0",
+  "timestamp": "2026-07-07T08:14:38.442188+00:00",
+  "repository": "vulnerable_app",
+  "risk_score": 100,
+  "risk_level": "Critical",
+  "summary": {
+    "total_issues": 31,
+    "dependency_issues": 9,
+    "security_issues": 20,
+    "api_hallucinations": 2
+  },
+  "dependency_audit": {
+    "repo_path": "C:\\Users\\yunus\\Desktop\\kaggle\\vibeguard\\demo\\vulnerable_app",
+    "dependency_files_found": [
+      "requirements.txt"
+    ],
+    "total_packages": 9,
+    "findings": [
+      {
+        "package": "flask",
+        "source_file": "requirements.txt",
+        "registry": "pypi",
+        "exists": true,
+        "version": "3.1.3",
+        "typosquat_risk": "none",
+        "typosquat_similar_to": [],
+        "age_days": 5925
+      },
+      {
+        "package": "requests",
+        "source_file": "requirements.txt",
+        "registry": "pypi",
+        "exists": true,
+        "version": "2.34.2",
+        "typosquat_risk": "none",
+        "typosquat_similar_to": [],
+        "age_days": 5621
+      },
+      {
+        "package": "gemini-toolkit-pro",
+        "source_file": "requirements.txt",
+        "registry": "pypi",
+        "exists": false,
+        "version": null,
+        "typosquat_risk": "none",
+        "typosquat_similar_to": [],
+        "age_days": null
+      },
+      {
+        "package": "numpy",
+        "source_file": "requirements.txt",
+        "registry": "pypi",
+        "exists": true,
+        "version": "2.5.1",
+        "typosquat_risk": "none",
+        "typosquat_similar_to": [],
+        "age_days": 7157
+      },
+      {
+        "package": "openai",
+        "source_file": "requirements.txt",
+        "registry": "pypi",
+        "exists": true,
+        "version": "2.44.0",
+        "typosquat_risk": "none",
+        "typosquat_similar_to": [],
+        "age_days": 2330
+      },
+      {
+        "package": "langchain-helper-utils",
+        "source_file": "requirements.txt",
+        "registry": "pypi",
+        "exists": false,
+        "version": null,
+        "typosquat_risk": "none",
+        "typosquat_similar_to": [],
+        "age_days": null
+      },
+      {
+        "package": "transformrs",
+        "source_file": "requirements.txt",
+        "registry": "pypi",
+        "exists": false,
+        "version": null,
+        "typosquat_risk": "high",
+        "typosquat_similar_to": [
+          {
+            "name": "transformers",
+            "distance": 1
+          }
+        ],
+        "age_days": null
+      },
+      {
+        "package": "pandas",
+        "source_file": "requirements.txt",
+        "registry": "pypi",
+        "exists": true,
+        "version": "3.0.3",
+        "typosquat_risk": "none",
+        "typosquat_similar_to": [],
+        "age_days": 6037
+      },
+      {
+        "package": "cryptographic",
+        "source_file": "requirements.txt",
+        "registry": "pypi",
+        "exists": false,
+        "version": null,
+        "typosquat_risk": "medium",
+        "typosquat_similar_to": [
+          {
+            "name": "cryptography",
+            "distance": 2
+          }
+        ],
+        "age_days": null
+      }
+    ],
+    "hallucinated_packages": [
+      "gemini-toolkit-pro",
+      "langchain-helper-utils",
+      "transformrs",
+      "cryptographic"
+    ],
+    "typosquat_warnings": [
+      "transformrs",
+      "cryptographic"
+    ],
+    "new_package_warnings": []
+  },
+  "security_scan": {
+    "findings": [
+      {
+        "file": "app.py",
+        "line_number": 15,
+        "category": "hardcoded_api_key",
+        "severity": "critical",
+        "code_snippet": "API_KEY = \"sk-proj-abc123def456ghi789jkl012mno345pqr678stu901vwx234\"",
+        "description": "Hardcoded API key or secret detected"
+      },
+      {
+        "file": "app.py",
+        "line_number": 16,
+        "category": "hardcoded_api_key",
+        "severity": "critical",
+        "code_snippet": "OPENAI_SECRET = \"sk-1234567890abcdefghijklmnopqrstuvwxyz\"",
+        "description": "Hardcoded API key or secret detected"
+      },
+      {
+        "file": "app.py",
+        "line_number": 16,
+        "category": "hardcoded_password",
+        "severity": "critical",
+        "code_snippet": "OPENAI_SECRET = \"sk-1234567890abcdefghijklmnopqrstuvwxyz\"",
+        "description": "Hardcoded password or secret"
+      },
+      {
+        "file": "app.py",
+        "line_number": 17,
+        "category": "hardcoded_api_key",
+        "severity": "critical",
+        "code_snippet": "AWS_ACCESS_KEY = \"AKIAIOSFODNN7EXAMPLE\"",
+        "description": "Hardcoded API key or secret detected"
+      },
+      {
+        "file": "app.py",
+        "line_number": 18,
+        "category": "hardcoded_password",
+        "severity": "critical",
+        "code_snippet": "DATABASE_PASSWORD = \"super_secret_password_123!\"",
+        "description": "Hardcoded password or secret"
+      },
+      {
+        "file": "config.py",
+        "line_number": 3,
+        "category": "hardcoded_password",
+        "severity": "critical",
+        "code_snippet": "JWT_SECRET = \"jwt_secret_token_12345\"",
+        "description": "Hardcoded password or secret"
+      },
+      {
+        "file": "config.py",
+        "line_number": 5,
+        "category": "hardcoded_api_key",
+        "severity": "critical",
+        "code_snippet": "SENDGRID_API_KEY = \"SG.abcdef123456.ghijkl789012\"",
+        "description": "Hardcoded API key or secret detected"
+      },
+      {
+        "file": "config.py",
+        "line_number": 6,
+        "category": "hardcoded_password",
+        "severity": "critical",
+        "code_snippet": "DATABASE_URL = \"postgresql://admin:password123@db.example.com:5432/mydb\"",
+        "description": "Hardcoded password or secret"
+      },
+      {
+        "file": "config.py",
+        "line_number": 7,
+        "category": "hardcoded_password",
+        "severity": "critical",
+        "code_snippet": "REDIS_PASSWORD = \"redis_pass_456\"",
+        "description": "Hardcoded password or secret"
+      },
+      {
+        "file": "app.py",
+        "line_number": 52,
+        "category": "sql_injection",
+        "severity": "high",
+        "code_snippet": "cursor.execute(f\"SELECT * FROM users WHERE username = '{username}'\")",
+        "description": "Potential SQL injection vulnerability"
+      },
+      {
+        "file": "app.py",
+        "line_number": 64,
+        "category": "sql_injection",
+        "severity": "high",
+        "code_snippet": "cursor.execute(f\"SELECT * FROM products WHERE name LIKE '%{query}%'\")",
+        "description": "Potential SQL injection vulnerability"
+      },
+      {
+        "file": "app.py",
+        "line_number": 78,
+        "category": "dangerous_exec",
+        "severity": "high",
+        "code_snippet": "result = eval(expression)",
+        "description": "Dangerous code execution"
+      },
+      {
+        "file": "app.py",
+        "line_number": 86,
+        "category": "dangerous_exec",
+        "severity": "high",
+        "code_snippet": "exec(code)",
+        "description": "Dangerous code execution"
+      },
+      {
+        "file": "app.py",
+        "line_number": 97,
+        "category": "insecure_deserialization",
+        "severity": "high",
+        "code_snippet": "obj = pickle.loads(data)  # VULNERABLE",
+        "description": "Insecure deserialization"
+      },
+      {
+        "file": "app.py",
+        "line_number": 108,
+        "category": "dangerous_exec",
+        "severity": "high",
+        "code_snippet": "result = os.system(f\"ping -c 1 {host}\")  # VULNERABLE",
+        "description": "Dangerous code execution"
+      },
+      {
+        "file": "app.py",
+        "line_number": 61,
+        "category": "missing_input_validation",
+        "severity": "medium",
+        "code_snippet": "query = request.args.get('q', '')",
+        "description": "Potential missing input validation on web request data"
+      },
+      {
+        "file": "app.py",
+        "line_number": 76,
+        "category": "missing_input_validation",
+        "severity": "medium",
+        "code_snippet": "expression = request.json.get('expression', '')",
+        "description": "Potential missing input validation on web request data"
+      },
+      {
+        "file": "app.py",
+        "line_number": 85,
+        "category": "missing_input_validation",
+        "severity": "medium",
+        "code_snippet": "code = request.json.get('code', '')",
+        "description": "Potential missing input validation on web request data"
+      },
+      {
+        "file": "app.py",
+        "line_number": 107,
+        "category": "missing_input_validation",
+        "severity": "medium",
+        "code_snippet": "host = request.args.get('host', 'localhost')",
+        "description": "Potential missing input validation on web request data"
+      },
+      {
+        "file": "app.py",
+        "line_number": 113,
+        "category": "debug_in_production",
+        "severity": "medium",
+        "code_snippet": "app.run(debug=True, host='0.0.0.0')",
+        "description": "Debug mode enabled \u2014 should not be used in production"
+      }
+    ],
+    "total_issues": 20,
+    "severity_breakdown": {
+      "critical": 9,
+      "high": 6,
+      "medium": 5,
+      "low": 0
+    }
+  },
+  "api_check": {
+    "findings": [
+      {
+        "file": "app.py",
+        "line_number": 35,
+        "module": "requests",
+        "called_function": "secure_get",
+        "exists_in_api": false,
+        "suggestion": "'requests.secure_get' does not exist. Did you mean 'requests.structures'?"
+      },
+      {
+        "file": "app.py",
+        "line_number": 38,
+        "module": "requests",
+        "called_function": "post_json",
+        "exists_in_api": false,
+        "suggestion": "'requests.post_json' does not exist. Did you mean 'requests.post'?"
+      }
+    ],
+    "total_hallucinated_calls": 2,
+    "total_files_scanned": 2
+  },
+  "recommendations": [
+    "**Remove non-existent packages** (`gemini-toolkit-pro`, `langchain-helper-utils`, `transformrs`, `cryptographic`). These were likely hallucinated by an AI code generator and will cause installation failures or, worse, install a malicious package.",
+    "**Verify potentially typosquatted packages** (`transformrs`, `cryptographic`). Confirm these are the intended packages and not malicious look-alikes.",
+    "**Immediately rotate any exposed secrets.** Hardcoded API keys and passwords must be moved to environment variables or a secrets manager (e.g., AWS Secrets Manager, HashiCorp Vault).",
+    "**Fix high-severity issues** including SQL injection risks, dangerous `eval`/`exec` usage, and insecure deserialization. Use parameterized queries, avoid `eval`, and use safe loaders.",
+    "**Address medium-severity issues** such as disabled TLS verification, debug mode in production, and weak crypto algorithms.",
+    "**Fix hallucinated API calls.** Replace non-existent function calls with the correct API. Consult official package documentation."
+  ]
+}

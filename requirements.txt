@@ -1,0 +1,5 @@
+google-adk>=1.6.1
+fastmcp>=2.0.0
+requests>=2.31.0
+Levenshtein>=0.25.0
+aiohttp>=3.9.0
