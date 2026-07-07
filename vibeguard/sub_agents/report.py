@@ -454,7 +454,7 @@ def generate_report(
 
 report_agent = Agent(
     name="ReportAgent",
-    model=os.getenv("VIBEGUARD_MODEL", "gemini-2.0-flash"),
+    model=os.getenv("VIBEGUARD_MODEL", "gemini-2.5-flash-lite"),
     description=(
         "Collects all findings from the DependencyAuditor, SecurityAgent, "
         "and APIChecker, then generates a comprehensive security report with "

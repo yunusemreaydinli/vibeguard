@@ -487,7 +487,7 @@ def scan_dependencies(repo_path: str) -> dict[str, Any]:
 
 dependency_agent = Agent(
     name="dependency_auditor",
-    model=os.getenv("VIBEGUARD_MODEL", "gemini-2.0-flash"),
+    model=os.getenv("VIBEGUARD_MODEL", "gemini-2.5-flash-lite"),
     description=(
         "Scans project dependency files and verifies each package "
         "against PyPI/npm registries. Detects hallucinated packages, "

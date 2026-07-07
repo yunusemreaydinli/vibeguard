@@ -509,7 +509,7 @@ def _suggest_alternative(
 
 api_checker_agent = Agent(
     name="APIChecker",
-    model=os.getenv("VIBEGUARD_MODEL", "gemini-2.0-flash"),
+    model=os.getenv("VIBEGUARD_MODEL", "gemini-2.5-flash-lite"),
     description=(
         "Detects hallucinated API calls — function or method invocations on "
         "imported packages that do not actually exist in those packages. "

@@ -296,7 +296,7 @@ def scan_security(repo_path: str) -> dict[str, Any]:
 
 security_agent = Agent(
     name="SecurityAgent",
-    model=os.getenv("VIBEGUARD_MODEL", "gemini-2.0-flash"),
+    model=os.getenv("VIBEGUARD_MODEL", "gemini-2.5-flash-lite"),
     description=(
         "Scans code repositories for security vulnerabilities including "
         "hardcoded secrets, SQL injection, dangerous eval/exec usage, "
